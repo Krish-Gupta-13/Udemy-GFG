@@ -5,7 +5,8 @@ using namespace std;
 int primMST(int graph[V][V]) 
 { 
 
-	int key[V];int res=0; 
+	int key[V];
+	int res=0; 
 	fill(key,key+V,INT_MAX);
 	bool mSet[V]; key[0]=0;
 
@@ -14,7 +15,7 @@ int primMST(int graph[V][V])
 		int u = -1; 
 
 		for(int i=0;i<V;i++)
-		    if(!mSet[i]&&(u==-1||key[i]<key[u]))
+		    if(!mSet[i]&&(u==-1 || key[i]<key[u]))
 		        u=i;
 		mSet[u] = true; 
 		res+=key[u];

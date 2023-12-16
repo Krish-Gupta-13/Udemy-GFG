@@ -13,11 +13,11 @@ struct Node{
 };
 Node *insert(Node *root, int x){
     if(root==NULL)
-    return new Node(x);
+        return new Node(x);
     if(root->key<x)
-    root->right=insert(root->right,x);
+        root->right=insert(root->right,x);
     else if(root->key>x)
-    root->left=insert(root->left,x);
+        root->left=insert(root->left,x);
     return root;
 }
 void inorder(Node *root){

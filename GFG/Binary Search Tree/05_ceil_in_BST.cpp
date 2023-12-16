@@ -16,9 +16,9 @@ Node *ceil(Node *root, int x){
     Node *res=NULL;
     while(root!=NULL){
         if(root->key==x)
-        return root;
+            return root;
         else if(root->key<x)
-        root=root->right;
+            root=root->right;
         else{
             res=root;
             root=root->left;

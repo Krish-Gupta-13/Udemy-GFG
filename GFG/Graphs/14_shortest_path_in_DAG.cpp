@@ -62,7 +62,7 @@ void Graph::shortestPath(int s){
         dist[i]=INT_MAX;
         dist[s]=0;
     }
-    while(Stack.empty()==false){
+    while(!Stack.empty()){
         int u = Stack.top();
         Stack.pop();
         list<AdjListNode>::iterator i;

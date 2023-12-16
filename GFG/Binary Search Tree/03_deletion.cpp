@@ -19,9 +19,9 @@ Node *getsuccessor(Node *curr){
 }
 Node *delnode(Node *root, int x){
     if(root==NULL)
-    return root;
+        return root;
     if(root->key>x)
-    root->left=delnode(root->left,x);
+        root->left=delnode(root->left,x);
     else if(root->key<x)
     root->right=delnode(root->right,x);
     else{

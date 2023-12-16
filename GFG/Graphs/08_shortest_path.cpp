@@ -5,17 +5,13 @@ using namespace std;
 #define ll long long int
 #define pb push_back
 void BFS(vector<int> adj[], int v, int s, int dist[]){
-    bool visited[v];
-    for(int i=0; i<v; i++){
-        visited[i]=false;
-    }
-    queue<int> q;
+    bool visited[v] = {false};
     visited[s]=true;
+    queue<int> q;
     q.push(s);
-    while(q.empty()==false){
+    while(!q.empty()){
         int u=q.front();
         q.pop();
-        // cout<<u<<" ";
         for(int v:adj[u]){
             if(visited[v]==false){
                 dist[v]=dist[u]+1;

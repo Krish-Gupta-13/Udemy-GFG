@@ -18,15 +18,15 @@ void printlevel(Node *root){
     }
     queue<Node*> q;
     q.push(root);
-    while(q.empty()==false){
+    while(!q.empty()){
         Node *curr=q.front();
         q.pop();
         cout<<curr->key<<" ";
         if(curr->left!=NULL){
             q.push(curr->left);
+        }
         if(curr->right!=NULL){
             q.push(curr->right);
-        }
         }
     }
 }

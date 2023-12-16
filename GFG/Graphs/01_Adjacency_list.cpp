@@ -8,8 +8,8 @@ void addedge(vector<int> adj[], int v, int u){
 }
 void PrintGraph(vector<int> adj[], int v){
     for(int i=0; i<v; i++){
-        for(auto i:adj[i]){
-            cout<<i<<" ";
+        for(auto x:adj[i]){
+            cout<<x<<" ";
         }
         cout<<endl;
     }

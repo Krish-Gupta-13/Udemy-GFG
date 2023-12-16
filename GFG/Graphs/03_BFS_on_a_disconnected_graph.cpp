@@ -8,11 +8,11 @@ void BFS(vector<int> adj[], int s, bool visited[]){
     queue<int> q;
     visited[s]=true;
     q.push(s);
-    while(q.empty()==false){
+    while(!q.empty()){
         int u = q.front();
         q.pop();
         cout<<u<<" ";
-        for(int v:adj[u]){
+        for(auto v:adj[u]){
             if(visited[v]==false){
                 visited[v]=true;
                 q.push(v);

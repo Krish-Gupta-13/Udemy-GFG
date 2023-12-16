@@ -15,13 +15,15 @@ void topologicalSort(vector<int> adj[], int v){
         q.push(i);
     }
     int count = 0;
-    while(q.empty()==false){
+    while(!q.empty()){
         int u = q.front();
         q.pop();
-        for(int x:adj[u])
-        if(--indegree[x]==0)
-        q.push(x);
-        count++;
+        for(int x:adj[u]){
+            indegree[x]--;
+            if(indegree[x]==0)
+            q.push(x);
+            count++;
+        }
     }
     if(count!=v){
         cout<<"There exists a cycle in the graph "<<endl;

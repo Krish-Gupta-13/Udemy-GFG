@@ -6,19 +6,19 @@ struct Node{
     int key;
     Node *left, *right;
     Node(int x){
-    key=x;
-    left=right=NULL;
+        key=x;
+        left=right=NULL;
     }
 };
 bool Search(Node *root, int x){
     if(root==NULL)
-    return false;
+        return false;
     else if(root->key==x)
-    return true;
+        return true;
     else if(root->key>x)
-    return Search(root->left,x);
+        return Search(root->left,x);
     else
-    return Search(root->right,x);
+        return Search(root->right,x);
 }
 int main(){
 	Node *root=new Node(15);

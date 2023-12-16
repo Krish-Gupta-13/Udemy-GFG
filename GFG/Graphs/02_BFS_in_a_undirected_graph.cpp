@@ -10,14 +10,17 @@ void BFS(vector<int> adj[], int v, int s){
     queue<int> q;
     visited[s]=true;
     q.push(s);
-    while(q.empty()==false){
-        int u = q.front();
-        q.pop();
-        cout<<u<<" ";
-        for(int v:adj[u]){
-            if(visited[v]==false){
-                visited[v]=true;
-                q.push(v);
+    while(!q.empty()){
+        int n = q.size();
+        for(int i=0; i<n; i++){
+            int u = q.front();
+            q.pop();
+            cout<<u<<" ";
+            for(auto v:adj[u]){
+                if(visited[v]==false){
+                    visited[v]=true;
+                    q.push(v);
+                }
             }
         }
     }

@@ -8,7 +8,7 @@ bool DFSRec(vector<int> adj[], int s, bool visited[], int parent){
     visited[s]=true;
     for(auto u:adj[s]){
         if(visited[u]==false){
-            if(DFSRec(adj,u,visited,s)==true){
+            if(DFSRec(adj,u,visited,s)){
                 return true;
             }
         }
@@ -19,13 +19,10 @@ bool DFSRec(vector<int> adj[], int s, bool visited[], int parent){
     return false;
 }
 bool DFS(vector<int> adj[], int v){
-    bool visited[v];
-    for(int i=0; i<v; i++){
-        visited[i]=false;
-    }
+    bool visited[v] = {false};
     for(int i=0; i<v; i++){
         if(visited[i]==false){
-            if(DFSRec(adj,i,visited,-1)==true){
+            if(DFSRec(adj,i,visited,-1)){
                 return true;
             }
         }

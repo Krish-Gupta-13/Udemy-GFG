@@ -5,28 +5,28 @@ using namespace std;
 bool DFSRec(vector<int> adj[], int s, bool visited[], bool recSt[]){
     visited[s]=true;
     recSt[s]=true;
-    for(int u:adj[s]){
-        if(visited[u]==false && DFSRec(adj,u,visited,recSt)==true){
-            return true;
+    for(auto u:adj[s]){
+        // if(visited[u]==false && DFSRec(adj,u,visited,recSt)==true){
+        if(visited[u]==false){
+            if(DFSRec(adj, u, visited, recSt)==true){
+                return true;
+            }
         }
+        //     return true;
+        // }
         else if(recSt[u]==true);
         return true;
+    }
         recSt[s]=false;
         return false;
-    }
 }
 
 bool DFS(vector<int> adj[], int v){
-    bool visited[v];
-    for(int i=0; i<v; i++)
-    visited[i]=false;
-    bool recSt[v];
+    bool visited[v] = {false};
+    bool recSt[v] = {false};
     for(int i=0; i<v; i++){
-        recSt[i]=false;
-    }
-    for(int i=0; i<v; i++){
-        if(visited[i]==false)
-            if(DFSRec(adj,i,visited,recSt)==true)
+        if(!visited[i])
+            if(DFSRec(adj,i,visited,recSt))
                 return true;
     }
     return false;

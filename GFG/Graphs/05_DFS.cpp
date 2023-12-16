@@ -7,6 +7,23 @@ using namespace std;
 void DFSRec(vector<int> adj[], int s, bool visited[]){
     visited[s]=true;
     cout<<s<<" ";
+    queue<int> q;
+
+    // queue<int> q;
+    // visited[s]=true;
+    // q.push(s);
+    // while(!q.empty()){
+    //     int u = q.front();
+    //     q.pop();
+    //     cout<<u<<" ";
+    //     for(auto v:adj[u]){
+    //         if(visited[v]==false){
+    //             visited[v]=true;
+    //             q.push(v);
+    //         }
+    //     }
+    // }
+    
     for(int u:adj[s]){
         if(visited[u]==false){
             DFSRec(adj,u,visited);
@@ -18,7 +35,11 @@ void DFS(vector<int> adj[], int v, int s){
     for(int i=0; i<v; i++){
         visited[i]=false;
     }
-    DFSRec(adj,s,visited);
+    // for(int i=0; i<v; i++){
+        // if(visited[i]==false){
+            DFSRec(adj,s,visited);
+        // }
+    // }
 }
 void addEdge(vector<int> adj[], int u, int v){
     adj[u].push_back(v);

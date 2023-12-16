@@ -5,7 +5,7 @@ using namespace std;
 void DFS(vector<int> adj[], int u, stack<int> &st, bool visited[]){
     visited[u]=true;
     for(int v:adj[u]){
-        if(visited[v]==false){
+        if(!visited[v]){
             DFS(adj,v,st,visited);
         }
     }
@@ -18,11 +18,12 @@ void topologicalSort(vector<int> adj[], int v){
     }
     stack<int> st;
     for(int u=0; u<v; u++){
-        if(visited[u]==false){
+        // if(visited[u]==false){
+            if(!visited[u]){
             DFS(adj,u,st,visited);
         }
     }
-    while(st.empty()==false){
+    while(!st.empty()){
         int u=st.top();
         st.pop();
         cout<<u<<" ";
